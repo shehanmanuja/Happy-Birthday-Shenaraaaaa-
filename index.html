@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Happy Birthday Shenaraaaaa! ✨🎉</title>
+  <meta name="description" content="A special interactive birthday surprise for Shenaraaaaa." />
+
+  <!-- Premium Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Caveat:wght@600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Ambient Starfield Canvas -->
+  <canvas id="stars-canvas"></canvas>
+
+  <!-- FX Canvas for Confetti & Fireworks -->
+  <canvas id="fx-canvas"></canvas>
+
+  <!-- Top Controls Bar -->
+  <header class="top-bar">
+    <div class="top-spacer"></div>
+    <div class="top-actions">
+      <button id="sound-btn" class="icon-btn" aria-label="Toggle Sound" title="Toggle Sound">
+        <span class="sound-icon" id="sound-icon">🔊</span>
+      </button>
+      <button id="music-btn" class="icon-btn pulse-glow" aria-label="Toggle Birthday Song" title="Toggle Birthday Song">
+        <span class="music-icon" id="music-icon">🎵</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="app-viewport">
+
+    <!-- ==================================================== -->
+    <!-- STEP 1: ULTRA-AESTHETIC 3D BIRTHDAY CAKE SCENE -->
+    <!-- ==================================================== -->
+    <section id="stage-cake" class="stage active">
+      <div class="cake-scene-wrapper">
+        <div class="stage-header">
+          <span class="cake-badge">✨ MAKE A WISH ✨</span>
+          <h2 class="cake-headline">Shenaraaaaa, Make a Wish! 🎂</h2>
+        </div>
+
+        <!-- Masterpiece 3D Birthday Cake Container -->
+        <div class="master-cake-wrapper">
+          <div class="spotlight-cone"></div>
+
+          <div class="cake-3d-pedestal">
+
+            <!-- Candles Array (Individually Clickable) -->
+            <div class="candles-container" id="candles-container">
+              <!-- Candle 1 -->
+              <div class="candle-item" id="candle-1" data-candle="1" role="button" tabindex="0"
+                aria-label="Blow candle 1">
+                <div class="flame-halo"></div>
+                <div class="candle-flame lit" id="flame-1"></div>
+                <div class="candle-smoke" id="smoke-1"></div>
+                <div class="candle-wick"></div>
+                <div class="candle-cylinder pattern-rose"></div>
+              </div>
+
+              <!-- Candle 2 -->
+              <div class="candle-item" id="candle-2" data-candle="2" role="button" tabindex="0"
+                aria-label="Blow candle 2">
+                <div class="flame-halo"></div>
+                <div class="candle-flame lit" id="flame-2"></div>
+                <div class="candle-smoke" id="smoke-2"></div>
+                <div class="candle-wick"></div>
+                <div class="candle-cylinder pattern-violet"></div>
+              </div>
+
+              <!-- Candle 3 (Centerpiece) -->
+              <div class="candle-item candle-center" id="candle-3" data-candle="3" role="button" tabindex="0"
+                aria-label="Blow candle 3">
+                <div class="flame-halo"></div>
+                <div class="candle-flame lit" id="flame-3"></div>
+                <div class="candle-smoke" id="smoke-3"></div>
+                <div class="candle-wick"></div>
+                <div class="candle-cylinder pattern-gold"></div>
+              </div>
+
+              <!-- Candle 4 -->
+              <div class="candle-item" id="candle-4" data-candle="4" role="button" tabindex="0"
+                aria-label="Blow candle 4">
+                <div class="flame-halo"></div>
+                <div class="candle-flame lit" id="flame-4"></div>
+                <div class="candle-smoke" id="smoke-4"></div>
+                <div class="candle-wick"></div>
+                <div class="candle-cylinder pattern-violet"></div>
+              </div>
+
+              <!-- Candle 5 -->
+              <div class="candle-item" id="candle-5" data-candle="5" role="button" tabindex="0"
+                aria-label="Blow candle 5">
+                <div class="flame-halo"></div>
+                <div class="candle-flame lit" id="flame-5"></div>
+                <div class="candle-smoke" id="smoke-5"></div>
+                <div class="candle-wick"></div>
+                <div class="candle-cylinder pattern-rose"></div>
+              </div>
+            </div>
+
+            <!-- Top Tier (Tier 1) -->
+            <div class="cake-layer layer-top">
+              <div class="layer-toppings">
+                <span class="topping berry-1">🍓</span>
+                <span class="topping gold-star">✨</span>
+                <span class="topping berry-2">🍓</span>
+                <span class="topping gold-star">✨</span>
+                <span class="topping berry-3">🍓</span>
+              </div>
+              <div class="cream-piping top-piping">
+                <span class="pipe"></span><span class="pipe"></span><span class="pipe"></span>
+                <span class="pipe"></span><span class="pipe"></span><span class="pipe"></span>
+                <span class="pipe"></span>
+              </div>
+              <div class="layer-icing icing-vanilla">
+                <div class="icing-drips drips-top">
+                  <span class="drip-drop d1"></span>
+                  <span class="drip-drop d2"></span>
+                  <span class="drip-drop d3"></span>
+                  <span class="drip-drop d4"></span>
+                  <span class="drip-drop d5"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Middle Tier (Tier 2) -->
+            <div class="cake-layer layer-middle">
+              <div class="cream-piping mid-piping">
+                <span class="pipe"></span><span class="pipe"></span><span class="pipe"></span>
+                <span class="pipe"></span><span class="pipe"></span><span class="pipe"></span>
+                <span class="pipe"></span><span class="pipe"></span><span class="pipe"></span>
+              </div>
+              <div class="layer-icing icing-strawberry">
+                <div class="decor-dots">
+                  <span class="gold-pearl"></span><span class="gold-pearl"></span><span class="gold-pearl"></span>
+                  <span class="gold-pearl"></span><span class="gold-pearl"></span><span class="gold-pearl"></span>
+                </div>
+                <div class="icing-drips drips-mid">
+                  <span class="drip-drop d1"></span>
+                  <span class="drip-drop d2"></span>
+                  <span class="drip-drop d3"></span>
+                  <span class="drip-drop d4"></span>
+                  <span class="drip-drop d5"></span>
+                  <span class="drip-drop d6"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom Tier (Tier 3) -->
+            <div class="cake-layer layer-bottom">
+              <div class="cream-piping bottom-piping">
+                <span class="pipe"></span><span class="pipe"></span><span class="pipe"></span>
+                <span class="pipe"></span><span class="pipe"></span><span class="pipe"></span>
+                <span class="pipe"></span><span class="pipe"></span><span class="pipe"></span>
+                <span class="pipe"></span><span class="pipe"></span>
+              </div>
+              <div class="layer-icing icing-chocolate">
+                <div class="gold-ribbon-band"></div>
+                <div class="decor-stars-row">
+                  <span>✨</span><span>⭐</span><span>✨</span><span>⭐</span><span>✨</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Luxury Mirrored Cake Stand / Plate -->
+            <div class="luxury-plate">
+              <div class="plate-inner-rim"></div>
+            </div>
+            <div class="plate-shadow"></div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================== -->
+    <!-- STEP 2: CELEBRATION & POPUP BIRTHDAY CARD -->
+    <!-- ==================================================== -->
+    <section id="stage-card" class="stage hidden">
+      <div class="card-scene-wrapper">
+        <!-- Floating Celebration Elements -->
+        <div class="celebration-floating-elements">
+          <span class="float-emoji float-1">🎈</span>
+          <span class="float-emoji float-2">✨</span>
+          <span class="float-emoji float-3">🌟</span>
+          <span class="float-emoji float-4">🎉</span>
+          <span class="float-emoji float-5">⭐</span>
+          <span class="float-emoji float-6">🎈</span>
+        </div>
+
+        <!-- Frosted Glass Birthday Card (Pops Up with Celebration) -->
+        <div class="glass-card" id="birthday-card">
+          <div class="card-glow-border"></div>
+
+          <!-- Top Decor -->
+          <div class="card-decor-top">
+            <span class="sparkle">✨</span>
+            <span class="cake-icon">🎂</span>
+            <span class="sparkle">✨</span>
+          </div>
+
+          <!-- Shenara Photo Avatar -->
+          <div class="card-avatar-container">
+            <div class="avatar-ring-outer">
+              <img src="WhatsApp Image 2026-09-11 at 12.47.44 AM.jpeg" alt="Shenara" class="card-avatar-img" />
+              <div class="avatar-badge">✨</div>
+            </div>
+          </div>
+
+          <!-- Header -->
+          <div class="card-header">
+            <span class="badge-subtitle">A SPECIAL NOTE FOR A GREAT FRIEND</span>
+            <h1 class="card-title">Happy Birthday Shenaraaaaa! <span class="party-popper">🎉</span></h1>
+          </div>
+
+
+
+          <!-- Body Message -->
+          <div class="card-body">
+            <p class="message-text">
+              Wishing you an incredible birthday filled with pure happiness, endless laughter, unforgettable moments,
+              and all the success in the world! You're an amazing friend and a truly awesome person to be around. May
+              this new year bring you exciting adventures, great achievements, and everything you work hard for. Have a
+              blast today!
+            </p>
+            <div class="message-emojis">
+              <span>🎂</span>
+              <span>🎉</span>
+              <span>✨</span>
+            </div>
+          </div>
+
+          <!-- Footer Signoff -->
+          <div class="card-footer">
+            <p class="signoff-quote">Cheers to you &amp; an epic year ahead,</p>
+            <p class="signoff-author">Your Friend, Shehan <span class="author-sparkle">✨</span></p>
+          </div>
+        </div>
+
+        <div class="card-actions-wrapper">
+          <a href="https://wa.me/94757506628?text=Thank%20you%20so%20much%20for%20the%20birthday%20surprise!%20%E2%9C%A8%20I%E2%80%99ll%20get%20you%20a%20chocolate%20mousse%20today.%20%F0%9F%8D%AB%F0%9F%98%8B"
+            target="_blank" rel="noopener noreferrer" class="btn-whatsapp" id="btn-whatsapp">
+            <span class="whatsapp-icon">💬</span>
+            <span class="whatsapp-text">Say Thanks on WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Background Music Audio Element -->
+  <audio id="bg-audio" src="nastelbom-happy-birthday-471481.mp3" preload="auto" loop autoplay></audio>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
